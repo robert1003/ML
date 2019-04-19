@@ -11,6 +11,7 @@ with open(predict_y_name, 'r') as f:
 
 err1 = np.array([0.0, 0.0, 0.0])
 err2 = np.array([0.0, 0.0, 0.0])
+w = [200.0, 1.0, 300.0]
 for i in range(len(predict_y)):
     for j in range(3):
         err1[j] += w[j] * np.abs(train_y[i][j] - predict_y[i][j])

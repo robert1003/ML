@@ -9,35 +9,39 @@ all_x = train_x.copy()
 
 train_x, val_x, train_y, val_y = train_test_split(train_x, train_y, test_size=0.25, random_state=1126)
 val = [(val_x, val_y)]
-
 # stage 1
 model = xgb.XGBRegressor(learning_rate=0.1126, max_depth=5, subsample=0.75, n_jobs=32, tree_method='hist', n_estimators=1000)
+'''
 model.fit(train_x, train_y, eval_set=val, eval_metric='mae', early_stopping_rounds=6)
 model.save_model('m2.model')
-
+'''
+model.load_model('m2.model')
 # stage 1 prediction
 prediction_train_1 = model.predict(all_x)
 prediction_test_1 = model.predict(test_x)
+print("stage 1 over")
 
 # stage 2
-model = xgb.XGBRegressor(learning_rate=0.01126, max_depth=20, subsample=0.75, n_jobs=32, tree_method='hist', n_estimators=2000)
-model.fit(train_x, train_y, eval_set=val, eval_metric='mae', early_stopping_rounds=12, xgb_model='m2.model')
+'''
+model = xgb.XGBRegressor(learning_rate=0.01126, max_depth=5, subsample=0.75, n_jobs=32, tree_method='hist', n_estimators=1000)
+model.fit(train_x, train_y, eval_set=val, eval_metric='mae', early_stopping_rounds=10, xgb_model='m2.model')
 model.save_model('m2.model')
+'''
 
 # stage 2 prediciton
 prediction_train_2 = model.predict(all_x)
 prediction_test_2 = model.predict(test_x)
 
 with open('train_stage_1_2.txt', 'w') as f:
-    for i in range(len(prediction_train_1)):
+    for i in prediction_train_1:
         print(i, file=f)
 with open('train_stage_2_2.txt', 'w') as f:
-    for i in range(len(prediction_train_2)):
+    for i in prediction_train_2:
         print(i, file=f)
 with open('test_stage_1_2.txt', 'w') as f:
-    for i in range(len(prediction_test_1)):
+    for i in prediction_test_1:
         print(i, file=f)
 with open('test_stage_2_2.txt', 'w') as f:
-    for i in range(len(prediction_test_2)):
+    for i in prediction_test_2:
         print(i, file=f)
 

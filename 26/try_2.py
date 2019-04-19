@@ -31,7 +31,7 @@ err1 = 0.0
 err2 = 0.0
 for i in range(len(val_x)):
     err1 += 300.0 * np.abs(prediction_valid_1[i] - val_y[i])
-    err2 += np.abs(predictioin_valid_1[i] - val_y[i]) / val_y[i]
+    err2 += np.abs(prediction_valid_1[i] - val_y[i]) / val_y[i]
 with open('status.txt', 'a') as f:
     print('stage 1 predicted', file=f)
     print('err1 valid error:', err1, file=f)
@@ -58,7 +58,7 @@ err1 = 0.0
 err2 = 0.0
 for i in range(len(val_x)):
     err1 += 300.0 * np.abs(prediction_valid_2[i] - val_y[i])
-    err2 += np.abs(predictioin_valid_2[i] - val_y[i]) / val_y[i]
+    err2 += np.abs(prediction_valid_2[i] - val_y[i]) / val_y[i]
 with open('status.txt', 'a') as f:
     print('stage 2 predicted', file=f)
     print('err1 valid error:', err1, file=f)

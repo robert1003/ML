@@ -21,7 +21,7 @@ prediction_test_1 = model.predict(test_x)
 
 # stage 2
 model = xgb.XGBRegressor(learning_rate=0.01126, max_depth=20, subsample=0.75, n_jobs=32, tree_method='hist', n_estimators=2000)
-model.fit(train_x, train2_y, eval_set=val, eval_metric='mae', early_stopping_rounds=12, xgb_model='m2.model')
+model.fit(train_x, train_y, eval_set=val, eval_metric='mae', early_stopping_rounds=12, xgb_model='m2.model')
 model.save_model('m2.model')
 
 # stage 2 prediciton

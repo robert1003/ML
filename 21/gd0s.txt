@@ -1,0 +1,5 @@
+start
+finish reading data
+training 0
+done 0 score = 74.30206331818233 0.752401930273874
+done score = 74.30206331818233 0.752401930273874

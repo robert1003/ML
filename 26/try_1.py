@@ -11,7 +11,7 @@ train_x, val_x, train_y, val_y = train_test_split(train_x, train_y, test_size=0.
 val = [(val_x, val_y)]
 
 # stage 1
-model = xgb.XGBRegressor(learning_rate=0.1126, max_depth=6, subsample=0.5, n_jobs=32, tree_method='hist', n_estimators=1000)
+model = xgb.XGBRegressor(learning_rate=0.1126, max_depth=6, subsample=0.5, n_jobs=24, tree_method='hist', n_estimators=1000)
 model.fit(train_x, train_y, eval_set=val, eval_metric='mae', early_stopping_rounds=5)
 model.save_model('m1.model')
 with open('status.txt', 'w') as f:
@@ -38,7 +38,7 @@ with open('status.txt', 'a') as f:
     print('err2 valid error:', err2, file=f)
 
 # stage 2
-model = xgb.XGBRegressor(learning_rate=0.01126, max_depth=4, subsample=0.75, n_jobs=32, tree_method='hist', n_estimators=1000)
+model = xgb.XGBRegressor(learning_rate=0.01126, max_depth=4, subsample=0.75, n_jobs=24, tree_method='hist', n_estimators=1000)
 model.fit(train_x, train_y, eval_set=val, eval_metric='mae', early_stopping_rounds=10, xgb_model='m1.model')
 model.save_model('m1.model')
 with open('status.txt', 'a') as f:

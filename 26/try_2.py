@@ -9,13 +9,13 @@ all_x = train_x.copy()
 
 train_x, val_x, train_y, val_y = train_test_split(train_x, train_y, test_size=0.3, random_state=1126)
 val = [(val_x, val_y)]
-
+'''
 # stage 1
 model = xgb.XGBRegressor(learning_rate=0.1126, max_depth=6, subsample=0.5, n_jobs=32, tree_method='hist', n_estimators=1000)
 model.fit(train_x, train_y, eval_set=val, eval_metric='mae', early_stopping_rounds=5)
 model.save_model('m2.model')
 with open('status.txt', 'w') as f:
-    print("stage 2 saved", file=f)
+    print("stage 1 saved", file=f)
 
 # stage 1 prediction
 prediction_train_1 = model.predict(all_x)
@@ -34,13 +34,14 @@ for i in range(len(val_x)):
     err2 += np.abs(prediction_valid_1[i] - val_y[i]) / val_y[i]
 with open('status.txt', 'a') as f:
     print('stage 1 predicted', file=f)
-    print('err1 valid error:', err1, file=f)
-    print('err2 valid error:', err2, file=f)
-
+    print('err1 valid error:', err1 / len(val_x), file=f)
+    print('err2 valid error:', err2 / len(val_x), file=f)
+'''
 # stage 2
 model = xgb.XGBRegressor(learning_rate=0.01126, max_depth=4, subsample=0.75, n_jobs=32, tree_method='hist', n_estimators=1000)
-model.fit(train_x, train_y, eval_set=val, eval_metric='mae', early_stopping_rounds=10, xgb_model='m2.model')
-model.save_model('m2.model')
+#model.fit(train_x, train_y, eval_set=val, eval_metric='mae', early_stopping_rounds=10, xgb_model='m2.model')
+#model.save_model('m2.model')
+model.load_model('m2.model')
 with open('status.txt', 'a') as f:
     print("stage 2 saved", file=f)
 
@@ -61,6 +62,6 @@ for i in range(len(val_x)):
     err2 += np.abs(prediction_valid_2[i] - val_y[i]) / val_y[i]
 with open('status.txt', 'a') as f:
     print('stage 2 predicted', file=f)
-    print('err1 valid error:', err1, file=f)
-    print('err2 valid error:', err2, file=f)
+    print('err1 valid error:', err1 / len(val_x), file=f)
+    print('err2 valid error:', err2 / len(val_x), file=f)
 

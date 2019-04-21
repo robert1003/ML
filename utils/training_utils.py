@@ -36,5 +36,5 @@ def write_status(name, mode, message):
 def write_prediction(name, mode, data):
     assert mode == 'a' or mode == 'w'
     with open(name, mode) as f:
-        for lines in f:
-            print(','.join(list(map(str, lines))), file=f)
+        for lines in data:
+            print(','.join(list(lines)), file=f)

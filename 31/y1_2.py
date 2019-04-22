@@ -76,7 +76,7 @@ def scorer(y, y_pred):
 
 # create GridSearchCV
 model = GridSearchCV(estimator=XGBRegressor(verbosity=2, n_jobs=8), 
-                     param_grid=params_test, 
+                     param_grid=params, 
                      scoring=make_scorer(scorer),
                      cv=3,
                      verbose=20,
@@ -102,7 +102,7 @@ write_prediction('test_y' + str(y_id) + '_' + str(track_id) + '.txt', 'w', model
 # In[16]:
 
 
-print(err1_calc(model.predict(train_x), train_y, y_id))
+print(err2_calc(model.predict(train_x), train_y, y_id))
 
 
 # In[1]:

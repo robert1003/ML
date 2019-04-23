@@ -12,9 +12,19 @@ def init(_fname='tmp'):
     fname=_fname
 
 def output():
+<<<<<<< HEAD
     f=open(folder+'answer/'+fname+'.csv','w')
     for i in range(len(y_test[0])):
         for j in range(len(y_test)):
+=======
+    if len(y_test)!=3 or len(y_test[0])!=2500 or len(y_test[1])!=2500 or len(y_test[2])!=2500:
+        print('err',flush=True)
+        print(len(y_test),len(y_test[0]),len(y_test[1]),len(y_test[2]),flush=True)
+        exit(0)
+    f=open(folder+'answer/'+fname+'.csv','w')
+    for i in range(2500):
+        for j in range(3):
+>>>>>>> 6d8d83304cf94c85a4363912180bc0598794765e
             print('%.10f' % y_test[j][i],end='',file=f)
             if j==2:
                 print(file=f)
@@ -22,8 +32,13 @@ def output():
                 print(',',end='',file=f)
     f.flush()
     f=open(folder+'answer/'+fname+'_train.csv','w')
+<<<<<<< HEAD
     for i in range(len(y[0])):
         for j in range(len(y)):
+=======
+    for i in range(47500):
+        for j in range(3):
+>>>>>>> 6d8d83304cf94c85a4363912180bc0598794765e
             print('%.10f' % y_res[j][i],end='',file=f)
             if j==2:
                 print(file=f)
@@ -50,8 +65,13 @@ def run(models=None,yid=None,gen=True,track=1,validation=None,cross_val=False):
     x=load(folder+'data/X_train.npz')['arr_0']
     y=load(folder+'data/Y_train.npz')['arr_0']
     x_test=load(folder+'data/X_test.npz')['arr_0']
+<<<<<<< HEAD
     y_test=[[0.]*len(x_test) for i in range(3)]
     y_res=[[0.]*len(x) for i in range(3)]
+=======
+    y_test=[[0.]*2500 for i in range(3)]
+    y_res=[[0.]*47500 for i in range(3)]
+>>>>>>> 6d8d83304cf94c85a4363912180bc0598794765e
     x_val=[]
     y_val=[]
     ind=[]
@@ -72,7 +92,11 @@ def run(models=None,yid=None,gen=True,track=1,validation=None,cross_val=False):
             ind.append((sz,len(x)))
     y=transpose(y)
     if yid==None:
+<<<<<<< HEAD
         yid=range(len(y))
+=======
+        yid=range(3)
+>>>>>>> 6d8d83304cf94c85a4363912180bc0598794765e
     elif type(yid)==int:
         yid=[yid]
     else:
@@ -80,7 +104,11 @@ def run(models=None,yid=None,gen=True,track=1,validation=None,cross_val=False):
     if type(models)!=list:
         models=[models]
 
+<<<<<<< HEAD
     for i in range(len(y)):
+=======
+    for i in range(3):
+>>>>>>> 6d8d83304cf94c85a4363912180bc0598794765e
         if not i in yid:
             continue
         print('training y',i,flush=True)

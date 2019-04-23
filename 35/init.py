@@ -6,25 +6,39 @@ folder='/tmp2/b07902139/'
 weight=[200.,1.,300.]
 score1,score2=0.,0.
 x,y,y_res,x_test,y_test=[],[],[],[],[]
+x_val,y_val,ind=[],[],[]
+sz=0
 
 def init(_fname='tmp'):
     global fname
     fname=_fname
 
+def readdata():
+    global x,y,x_test
+    x=load(folder+'data/X_train.npz')['arr_0']
+    y=load(folder+'data/Y_train.npz')['arr_0']
+    x_test=load(folder+'data/X_test.npz')['arr_0']
+    print('finish reading data',flush=True)
+
+def init_validation(validation,cross_val):
+    global x,y,x_val,y_val,ind,sz
+    tmp=random.permutation(len(x))
+    for i in tmp:
+        x_val.append(x[i])
+        y_val.append(y[i])
+    y_val=transpose(y_val)
+    sz=len(x)//validation
+    if cross_val:
+        for i in range(0,len(x),sz):
+            ind.append((i,min(i+sz,len(x))))
+    else:
+        ind.append((0,sz))
+        ind.append((sz,len(x)))
+
 def output():
-<<<<<<< HEAD
     f=open(folder+'answer/'+fname+'.csv','w')
     for i in range(len(y_test[0])):
         for j in range(len(y_test)):
-=======
-    if len(y_test)!=3 or len(y_test[0])!=2500 or len(y_test[1])!=2500 or len(y_test[2])!=2500:
-        print('err',flush=True)
-        print(len(y_test),len(y_test[0]),len(y_test[1]),len(y_test[2]),flush=True)
-        exit(0)
-    f=open(folder+'answer/'+fname+'.csv','w')
-    for i in range(2500):
-        for j in range(3):
->>>>>>> 6d8d83304cf94c85a4363912180bc0598794765e
             print('%.10f' % y_test[j][i],end='',file=f)
             if j==2:
                 print(file=f)
@@ -32,13 +46,8 @@ def output():
                 print(',',end='',file=f)
     f.flush()
     f=open(folder+'answer/'+fname+'_train.csv','w')
-<<<<<<< HEAD
     for i in range(len(y[0])):
         for j in range(len(y)):
-=======
-    for i in range(47500):
-        for j in range(3):
->>>>>>> 6d8d83304cf94c85a4363912180bc0598794765e
             print('%.10f' % y_res[j][i],end='',file=f)
             if j==2:
                 print(file=f)
@@ -61,42 +70,17 @@ def run(models=None,yid=None,gen=True,track=1,validation=None,cross_val=False):
         exit(0)
     
     print('start',flush=True)
-    global x,y,y_res,x_test,y_test,score1,score2
-    x=load(folder+'data/X_train.npz')['arr_0']
-    y=load(folder+'data/Y_train.npz')['arr_0']
-    x_test=load(folder+'data/X_test.npz')['arr_0']
-<<<<<<< HEAD
+    readdata()
+    global x,y,y_res,x_test,y_test,x_val,y_val,ind,score1,score2
     y_test=[[0.]*len(x_test) for i in range(3)]
     y_res=[[0.]*len(x) for i in range(3)]
-=======
-    y_test=[[0.]*2500 for i in range(3)]
-    y_res=[[0.]*47500 for i in range(3)]
->>>>>>> 6d8d83304cf94c85a4363912180bc0598794765e
-    x_val=[]
-    y_val=[]
-    ind=[]
-    print('finish reading data',flush=True)
 
     if not validation is None:
-        tmp=random.permutation(len(x))
-        for i in tmp:
-            x_val.append(x[i])
-            y_val.append(y[i])
-        y_val=transpose(y_val)
-        sz=len(x)//validation
-        if cross_val:
-            for i in range(0,len(x),sz):
-                ind.append((i,min(i+sz,len(x))))
-        else:
-            ind.append((0,sz))
-            ind.append((sz,len(x)))
+        init_validation(validation,cross_val)
+
     y=transpose(y)
     if yid==None:
-<<<<<<< HEAD
         yid=range(len(y))
-=======
-        yid=range(3)
->>>>>>> 6d8d83304cf94c85a4363912180bc0598794765e
     elif type(yid)==int:
         yid=[yid]
     else:
@@ -104,11 +88,7 @@ def run(models=None,yid=None,gen=True,track=1,validation=None,cross_val=False):
     if type(models)!=list:
         models=[models]
 
-<<<<<<< HEAD
     for i in range(len(y)):
-=======
-    for i in range(3):
->>>>>>> 6d8d83304cf94c85a4363912180bc0598794765e
         if not i in yid:
             continue
         print('training y',i,flush=True)
@@ -142,6 +122,7 @@ def run(models=None,yid=None,gen=True,track=1,validation=None,cross_val=False):
                     v2+=tmp[1]
                 if not cross_val:
                     break
+
             if validation is None:
                 s1/=len(x)
                 s2/=len(x)

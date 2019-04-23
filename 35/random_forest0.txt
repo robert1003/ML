@@ -1,0 +1,14 @@
+start
+finish reading data
+training y 0
+training y 0 model 0
+done 0 0 ,score = 13.469457879799421 0.6239507974177236
+done y 0 ,best model = 0 ,score =  13.469457879799421 0.6239507974177236
+Traceback (most recent call last):
+  File "tmp/7u8CALAmIUNZX5b5", line 6, in <module>
+    run(models=model,yid=0)
+  File "/tmp2/b07902139/tmp/pfinit.py", line 97, in run
+    output()
+  File "/tmp2/b07902139/tmp/pfinit.py", line 25, in output
+    for i in range(len(y_train[0])):
+NameError: name 'y_train' is not defined

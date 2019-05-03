@@ -1,0 +1,17 @@
+start
+finish reading data
+training y 0
+training y 0 model 0
+done 0 0 ,score = 5.1503281575187465 0.17075111550086944
+done y 0 ,best model = 0 ,score =  5.1503281575187465 0.17075111550086944
+training y 1
+training y 1 model 0
+done 1 0 ,score = 5.007318518129964 0.043602945219485004
+done y 1 ,best model = 0 ,score =  5.007318518129964 0.043602945219485004
+training y 2
+training y 2 model 0
+done 2 0 ,score = 0.5297007239116036 0.002454551798794512
+done y 2 ,best model = 0 ,score =  0.5297007239116036 0.002454551798794512
+done score = 10.687347399560313 0.21680861251914896
+/home/student/07/b07902139/python-packages/xgboost/lib/python3.7/site-packages/xgboost/core.py:613: UserWarning: Use subset (sliced data) of np.ndarray is not recommended because it will generate extra copies and increase memory consumption
+  warnings.warn("Use subset (sliced data) of np.ndarray is not recommended " +

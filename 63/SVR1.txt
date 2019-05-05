@@ -1,0 +1,4 @@
+start
+finish reading data
+training y 1
+training y 1 model 0

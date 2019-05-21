@@ -12,10 +12,10 @@ tmp_x = np.concatenate((train_x, test_x), axis=0)
 print(f'concatenated: {tmp_x.shape}')
 
 fig = plt.figure(figsize=(30, 10))
-for i in range(10000):
+for i in range(16):
     if i % 100 == 0:
         print(i)
-    plt.subplot(2500, 4, (i + 1))
+    plt.subplot(4, 4, (i + 1))
     sns.distplot(tmp_x[:, i], norm_hist=False, kde=False)
     plt.title(f'feature {i + 1}')
 fig.savefig(f'distplot.pdf', bbox_inches='tight')

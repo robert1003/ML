@@ -1,0 +1,7 @@
+start
+finish reading data
+training y 1
+training y 1 model 0
+done 1 0 ,score = 9.403321615320596 0.08691482463537807
+done y 1 ,best model = 0 ,score =  9.403321615320596 0.08691482463537807
+done score = 9.403321615320596 0.08691482463537807

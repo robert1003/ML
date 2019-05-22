@@ -8,7 +8,7 @@ machine_id = sys.argv[1]
 y_id = 0
 track_id = 1
 
-n_estimators = 1000
+n_estimators = int(sys.argv[2])
 criterion = 'mae'
 n_jobs = -1
 oob_score = True

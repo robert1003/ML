@@ -104,6 +104,7 @@ print(f'datas_idx shape {datas_idx.shape}')
 
 # modify train_x, train_y
 true_x = train_x.copy()
+true_x = true_x[:, features_idx]
 true_y = train_y.copy()
 train_x = train_x[datas_idx][:, features_idx]
 train_y = train_y[datas_idx]

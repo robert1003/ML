@@ -103,6 +103,8 @@ print(f'features_idx shape {features_idx.shape}')
 print(f'datas_idx shape {datas_idx.shape}')
 
 # modify train_x, train_y
+true_x = train_x.copy()
+true_y = train_y.copy()
 train_x = train_x[datas_idx][:, features_idx]
 train_y = train_y[datas_idx]
 
@@ -123,8 +125,8 @@ model.fit(train_x, train_y)
 with open(information_file_name, 'w') as f:
     if oob_score:
         print(f'oob_score: {model.oob_score_}', file=f)
-    print(f'track 1 ein: {err1_calc(model.predict(train_x), train_y, y_id)}', file=f)
-    print(f'track 2 ein: {err2_calc(model.predict(train_x), train_y)}', file=f)
+    print(f'track 1 ein: {err1_calc(model.predict(true_x), true_y, y_id)}', file=f)
+    print(f'track 2 ein: {err2_calc(model.predict(true_x), true_y)}', file=f)
 
 # write prediction
 write_prediction(predict_y_file_name, 'w', model.predict(test_x).reshape((2500, 1)).astype('str'))

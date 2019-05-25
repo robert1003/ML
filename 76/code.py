@@ -5,7 +5,7 @@ import sys
 
 # parameters
 machine_id = sys.argv[1]
-y_id = 1
+y_id = 2
 track_id = 2
 
 n_estimators = int(sys.argv[2])
@@ -25,7 +25,7 @@ train_y = np.load(data_file_path_prefix + 'Y_train.npz')['arr_0'][:, y_id]
 print('data loaded')
 
 # calculate type 1 error
-w = [200.0, 1.0, 300.0]
+w = [300.0, 1.0, 200.0]
 def err1_calc(predict, real, idx):
     return np.sum(w[idx] * np.abs(predict - real)) / len(predict)
 

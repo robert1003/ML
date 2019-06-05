@@ -1,0 +1,15 @@
+start
+finish reading data
+training y 0
+training y 0 model 0
+done 0 0 ,score = 0.0 0.0
+done y 0 ,best model = 0 ,score = 0.0 0.0 ,test score = 60.67783085130311 2.1516541531856173
+training y 1
+training y 1 model 0
+done 1 0 ,score = 0.0 0.0
+done y 1 ,best model = 0 ,score = 0.0 0.0 ,test score = 31.901243309027585 0.3176435646659243
+training y 2
+training y 2 model 0
+done 2 0 ,score = 0.0 0.0
+done y 2 ,best model = 0 ,score = 0.0 0.0 ,test score = 4.401124737535081 0.0302926095618369
+done score = 0.0 0.0 ,test score = 96.98019889786578 2.499590327413378

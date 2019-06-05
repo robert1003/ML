@@ -28,5 +28,5 @@ darr=[0,0.002,0.005,0.008]
 model=[]
 for i in larr:
     for j in darr:
-        model.append(gd(lamb=i,iter=2000,decrease_rate=j))
+        model.append(gd(lamb=i,iter=200,decrease_rate=j))
 run(models=model,track=2,yid=0)

@@ -24,7 +24,7 @@ class gd:
         return matmul(x,self.w)
 
 larr=[5,20,60,100]
-darr=[0,0.0002,0.0005,0.0008]
+darr=[0,0.002,0.005,0.008]
 model=[]
 for i in larr:
     for j in darr:

@@ -35,16 +35,6 @@ params_list = []
 Ein = []
 Eval = []
 
-import itertools
-import lightgbm as lgb
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error
-
-feature_percent = [1e-2, 5e-3, 1e-3]
-params_list = []
-Ein = []
-Eval = []
-
 f = open('status.txt', 'w')
 keys, values = zip(*params.items())
 for per in feature_percent:
@@ -54,6 +44,7 @@ for per in feature_percent:
     for v in itertools.product(*values):
         param = dict(zip(keys, v))
         print(per, param, file=f)
+        f.flush()
         print(per, param)
         params_list.append((per, param))
 
@@ -70,8 +61,10 @@ for per in feature_percent:
         Eval.append(np.mean(np.abs(y_test - model.predict(X_test)) / y_test))
 
         print('Ein', Ein[-1], file=f)
+        f.flush()
         print('Ein', Ein[-1])
         print('Eval', Eval[-1], file=f)
+        f.flush()
         print('Eval', Eval[-1])
 
         del(param, model)
@@ -80,5 +73,6 @@ for per in feature_percent:
 
 print('', file=f)
 print(params_list[np.argmin(Eval)], file=f)
+f.flush()
 print(params_list[np.argmin(Eval)])
 f.close()

@@ -3,9 +3,9 @@ init('xgboost')
 
 from xgboost import XGBRegressor
 larr=[0.1]
-darr=[4,6,8]
-narr=[250]
-sarr=[0.75]
+darr=[8]
+narr=[500]
+sarr=[0.9]
 model=[]
 for l in larr:
     for d in darr:

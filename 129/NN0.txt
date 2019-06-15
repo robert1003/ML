@@ -1,0 +1,30 @@
+2019-06-16 04:22:13.006930: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+2019-06-16 04:22:13.060777: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2300830000 Hz
+2019-06-16 04:22:13.061706: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55f28c668440 executing computations on platform Host. Devices:
+2019-06-16 04:22:13.061748: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-16 04:22:13.376407: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55f28c23a940 executing computations on platform CUDA. Devices:
+2019-06-16 04:22:13.376464: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX 1080 Ti, Compute Capability 6.1
+2019-06-16 04:22:13.377123: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.645
+pciBusID: 0000:23:00.0
+totalMemory: 10.92GiB freeMemory: 10.52GiB
+2019-06-16 04:22:13.377162: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-16 04:22:14.458117: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-16 04:22:14.458200: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-16 04:22:14.458210: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-16 04:22:14.473819: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10169 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:23:00.0, compute capability: 6.1)
+start
+finish reading data
+training y 0
+training y 0 model 0
+Using TensorFlow backend.
+WARNING:tensorflow:From /usr/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /usr/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-06-16 04:22:33.487148: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.1 locally
+done 0 0 ,score = 30.2856193922261 0.2459446705971768
+done y 0 ,best model = 0 ,score = 30.2856193922261 0.2459446705971768 ,test score = 31.007499554418942 0.24976007158447397
+done score = 30.2856193922261 0.2459446705971768 ,test score = 31.007499554418942 0.24976007158447397

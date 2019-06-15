@@ -1,0 +1,46 @@
+ein
+t1y0, t2y0: 0.2186988731697137 0.004442116982599455
+t1y2, t2y2: 0.08224539479865242 0.0005670925620733313
+
+sum: ? ?
+
+eval
+t1y0, t2y0: 25.328576449367265 0.7938302953971021
+t1y2, t2y2: 1.0991415766481059 0.007643244706979376
+
+sum: ? ?
+
+eout
+sum: ?, ?
+
+params:
+
+y0
+per = 1e-3
+
+param = {
+    'max_depth': 7,
+    'learning_rate': 0.01,
+    'n_estimators': 100000,
+    'objective': 'reg:squarederror',
+    'booster': 'gbtree',
+    'subsample': 0.75,
+    'tree_method': 'gpu_hist',
+    'grow_policy': 'lossguide'
+}
+
+y2
+per = 1e-3
+
+param = {
+    'max_depth': 6,
+    'learning_rate': 0.01,
+    'n_estimators': 100000, # 34629
+    'objective': 'reg:squarederror',
+    'booster': 'gbtree',
+    'subsample': 0.75,
+    'tree_method': 'gpu_hist',
+    'grow_policy': 'lossguide'
+}
+
+

@@ -15,7 +15,7 @@ from keras.models import Sequential
 from keras.layers import Layer,Dense,Dropout,BatchNormalization,GaussianNoise
 from keras.wrappers.scikit_learn import KerasRegressor
 from keras.callbacks import Callback,EarlyStopping
-init('NN0')
+init('NN1')
 
 class RBFLayer(Layer):
     def __init__(self,units,gamma,**kwargs):

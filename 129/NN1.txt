@@ -1,18 +1,18 @@
-2019-06-16 22:49:48.051599: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
-2019-06-16 22:49:48.084318: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2300830000 Hz
-2019-06-16 22:49:48.085433: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5606f3ae0130 executing computations on platform Host. Devices:
-2019-06-16 22:49:48.085476: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
-2019-06-16 22:49:48.250827: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5606f3adfa10 executing computations on platform CUDA. Devices:
-2019-06-16 22:49:48.250889: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce RTX 2080 Ti, Compute Capability 7.5
-2019-06-16 22:49:48.251039: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+2019-06-17 00:19:54.706348: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+2019-06-17 00:19:54.730628: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2300830000 Hz
+2019-06-17 00:19:54.731949: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x563b5c748270 executing computations on platform Host. Devices:
+2019-06-17 00:19:54.731994: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-17 00:19:54.900778: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x563b5c648a30 executing computations on platform CUDA. Devices:
+2019-06-17 00:19:54.900860: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce RTX 2080 Ti, Compute Capability 7.5
+2019-06-17 00:19:54.901095: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
 name: GeForce RTX 2080 Ti major: 7 minor: 5 memoryClockRate(GHz): 1.545
 pciBusID: 0000:24:00.0
-totalMemory: 10.76GiB freeMemory: 8.80GiB
-2019-06-16 22:49:48.251056: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
-2019-06-16 22:49:48.938573: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
-2019-06-16 22:49:48.938666: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
-2019-06-16 22:49:48.938680: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
-2019-06-16 22:49:48.938800: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8473 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:24:00.0, compute capability: 7.5)
+totalMemory: 10.76GiB freeMemory: 8.32GiB
+2019-06-17 00:19:54.901121: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-17 00:19:55.607572: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-17 00:19:55.607626: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-17 00:19:55.607634: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-17 00:19:55.607759: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8010 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:24:00.0, compute capability: 7.5)
 start
 finish reading data
 training y 1
@@ -24,7 +24,7 @@ Colocations handled automatically by placer.
 WARNING:tensorflow:From /usr/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Use tf.cast instead.
-2019-06-16 22:55:07.869390: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10 locally
-done 1 0 ,score = 17.949037860468877 0.1251179421538606
-done y 1 ,best model = 0 ,score = 17.949037860468877 0.1251179421538606 ,test score = 18.430929468199412 0.12856439030873001
-done score = 17.949037860468877 0.1251179421538606 ,test score = 18.430929468199412 0.12856439030873001
+2019-06-17 00:27:50.253087: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10 locally
+done 1 0 ,score = 17.509929051334144 0.12423197626465185
+done y 1 ,best model = 0 ,score = 17.509929051334144 0.12423197626465185 ,test score = 18.086138364789765 0.1273250053597096
+done score = 17.509929051334144 0.12423197626465185 ,test score = 18.086138364789765 0.1273250053597096

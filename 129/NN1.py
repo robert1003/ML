@@ -64,7 +64,7 @@ model=[]
 
 for i in sz:
     tmpf=partial(create_model,0.0,0.195,0.045)
-    model.append(KerasRegressor(build_fn=tmpf,epochs=389,batch_size=i,verbose=0))
+    model.append(KerasRegressor(build_fn=tmpf,epochs=384,batch_size=i,verbose=0))
 
 run(models=model,yid=1,track=2,max_features=200,standardize=True,normalization=False,gen=True)
 

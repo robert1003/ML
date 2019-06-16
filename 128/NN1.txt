@@ -1,0 +1,30 @@
+start
+finish reading data
+training y 1
+training y 1 model 0
+Using TensorFlow backend.
+WARNING:tensorflow:From /usr/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /usr/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-06-16 21:48:17.275823: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+2019-06-16 21:48:17.298039: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2300830000 Hz
+2019-06-16 21:48:17.299870: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5613b9b5c4d0 executing computations on platform Host. Devices:
+2019-06-16 21:48:17.299944: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-16 21:48:17.481906: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5613b81db6c0 executing computations on platform CUDA. Devices:
+2019-06-16 21:48:17.481955: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce RTX 2080 Ti, Compute Capability 7.5
+2019-06-16 21:48:17.482112: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce RTX 2080 Ti major: 7 minor: 5 memoryClockRate(GHz): 1.545
+pciBusID: 0000:24:00.0
+totalMemory: 10.76GiB freeMemory: 9.88GiB
+2019-06-16 21:48:17.482129: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-16 21:48:18.044737: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-16 21:48:18.044799: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-16 21:48:18.044810: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-16 21:48:18.044947: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 9526 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:24:00.0, compute capability: 7.5)
+2019-06-16 21:48:19.737720: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10 locally
+done 1 0 ,score = 17.466989631554227 0.1228368556527453
+done y 1 ,best model = 0 ,score = 17.466989631554227 0.1228368556527453 ,test score = 18.206386852666906 0.12799039873185752
+done score = 17.466989631554227 0.1228368556527453 ,test score = 18.206386852666906 0.12799039873185752

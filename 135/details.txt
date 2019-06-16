@@ -1,0 +1,29 @@
+ein
+t1y0, t2y0: 0.11314460714394194 0.0024928024071968935
+
+sum: ? ?
+
+eval
+t1y0, t2y0: 24.838967957940113 0.665504116259319
+
+sum: ? ?
+
+eout
+sum: ?, ?
+
+params:
+
+y0
+per = 9e-3
+
+param = {
+    'max_depth': 9,
+    'learning_rate': 0.01,
+    'n_estimators': 100000,
+    'objective': 'reg:squarederror',
+    'booster': 'gbtree',
+    'subsample': 0.75,
+    'tree_method': 'gpu_hist',
+    'grow_policy': 'lossguide'
+}
+

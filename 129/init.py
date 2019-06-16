@@ -189,7 +189,7 @@ def evaluate(i,y_cur,ans):
         tmp2+=res[j]/ans[j]
     return tmp1,tmp2
 
-def run(models=None,yid=None,gen=True,track=1,seed=1126,validation=None,cross_val=False,add_const=False,max_features=None,add_noise=False,train_all=False,standardize=False,normalization=False,iteration=1,blending=False,callback=False):
+def run(models=None,yid=None,gen=True,track=1,seed=1126,validation=None,cross_val=False,add_const=False,max_features=None,add_noise=False,train_all=False,standardize=False,normalization=False,iteration=1,blending=False):
 
     if models is None:
         print('error:model undefined')
@@ -197,10 +197,7 @@ def run(models=None,yid=None,gen=True,track=1,seed=1126,validation=None,cross_va
     
     print('start',flush=True)
     global x,y,y_res,x_test,y_test,x_val,y_val,x_intest,y_intest_res,y_intest,ind,score1,score2,test_score1,test_score2,xs,x_tests,x_intests
-
-    score1,score2,test_score1,test_score2=0.,0.,0.,0.
-    if not seed is None:
-        random.seed(seed)
+    random.seed(seed)
     small=(max_features!=None and max_features<=200)
     readdata(train_all,small,add_noise,blending)
     y_test=[[0.]*len(x_test) for i in range(3)]

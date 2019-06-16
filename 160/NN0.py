@@ -82,9 +82,9 @@ def blend_model():
 #model.add(GaussianNoise(0.1))
 #model.add(BatchNormalization())
 #model.add(Dense(6,activation='relu'))
-    model.add(Dense(5,activation='relu'))
+#model.add(Dense(5,activation='relu'))
 #model.add(Dense(3,activation='relu'))
-    model.add(Dense(3,activation='relu'))
+    model.add(Dense(4,activation='relu'))
     model.add(Dense(1,activation='relu'))
     model.compile(optimizer='adam',loss='mape')
     return model
